@@ -1,0 +1,4 @@
+de\hspf\authservice\AuthserviceRestApplication.class
+de\hspf\authservice\client\ServiceController.class
+de\hspf\authservice\secure\Account.class
+de\hspf\authservice\secure\ProtectedController.class
