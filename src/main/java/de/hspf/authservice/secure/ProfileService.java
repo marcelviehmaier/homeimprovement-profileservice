@@ -6,10 +6,12 @@
 package de.hspf.authservice.secure;
 
 import de.hspf.authservice.Account;
+import de.hspf.authservice.ExpertLevel;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
@@ -40,12 +42,25 @@ public class ProfileService {
             fileInputStream.read(picInBytes);
         }
         account.setProfilePic(picInBytes);
+        
+        // If user already exists, load object from database. Otherwise save it in database
         if(!profileRepository.userExists(account)){
+            account = this.setUpDefaultAccount(account);
             profileRepository.safeUser(account);
-            logger.info("Save new user " + account.getUsername());
+            logger.log(Level.INFO, "Save new user: {0}", account.getUsername());
         }else{
             account = profileRepository.getAccountByEmail(account);
+            logger.log(Level.INFO, "Load user from database: {0}", account.getUsername());
         }
+        
+        return account;
+    }
+    
+    private Account setUpDefaultAccount(Account account){
+        logger.info(account.toString());
+        account.setAge(0);
+        account.setJob("Insert your Age");
+        account.setLevel(ExpertLevel.BEGINNER);
         return account;
     }
 }

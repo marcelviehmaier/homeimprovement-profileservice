@@ -5,6 +5,7 @@
  */
 package de.hspf.authservice;
 
+import java.util.List;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -36,6 +37,14 @@ public class Account {
     private Set<String> roles;
     @Column
     private byte[] profilePic;
+    @Column
+    private int age;
+    @Column
+    private String job;
+    @Column
+    private ExpertLevel level;
+    @Column
+    private  List<String> topics;
 
     public String getUsername() {
         return username;
@@ -75,6 +84,38 @@ public class Account {
 
     public void setProfilePic(byte[] profilePic) {
         this.profilePic = profilePic;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getJob() {
+        return job;
+    }
+
+    public void setJob(String job) {
+        this.job = job;
+    }
+
+    public ExpertLevel getLevel() {
+        return level;
+    }
+
+    public void setLevel(ExpertLevel level) {
+        this.level = level;
+    }
+
+    public List<String> getTopics() {
+        return topics;
+    }
+
+    public void setTopics(List<String> topics) {
+        this.topics = topics;
     }
 
 }
