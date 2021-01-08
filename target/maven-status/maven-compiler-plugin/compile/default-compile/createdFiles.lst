@@ -1,4 +1,6 @@
+de\hspf\authservice\secure\ProfileService.class
 de\hspf\authservice\AuthserviceRestApplication.class
 de\hspf\authservice\client\ServiceController.class
-de\hspf\authservice\secure\Account.class
+de\hspf\authservice\secure\ProfileResporitory.class
+de\hspf\authservice\Account.class
 de\hspf\authservice\secure\ProtectedController.class
