@@ -57,10 +57,15 @@ public class ProfileService {
     }
     
     private Account setUpDefaultAccount(Account account){
-        logger.info(account.toString());
         account.setAge(0);
-        account.setJob("Insert your Age");
+        account.setJob("");
         account.setLevel(ExpertLevel.BEGINNER);
+        account.setDescription("Hello, I am " + account.getUsername());
         return account;
+    }
+    
+    public Account updateAccount(Account account){
+        Account acc = this.profileRepository.updateAccount(account);
+        return acc;
     }
 }

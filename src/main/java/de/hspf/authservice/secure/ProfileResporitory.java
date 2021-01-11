@@ -32,6 +32,19 @@ public class ProfileResporitory implements Serializable {
         return account;
     }
 
+    public Account updateAccount(Account accountUpdated) {
+        logger.info("... " + accountUpdated.getDescription());
+        Account account = this.getAccountByEmail(accountUpdated);
+        account.setJob(accountUpdated.getJob());
+        account.setAge(accountUpdated.getAge());
+        account.setLevel(accountUpdated.getLevel());
+        account.setTopics(accountUpdated.getTopics());
+        account.setDescription(accountUpdated.getDescription());
+        entityManager.merge(account);
+        logger.info("asdas" + account.getDescription());
+        return account;
+    }
+
     public boolean userExists(Account signUpAccount) {
         return this.readAllAccounts().stream().anyMatch((account) -> (signUpAccount.getEmail().equals(account.getEmail())));
     }
@@ -44,16 +57,16 @@ public class ProfileResporitory implements Serializable {
         }
         return null;
     }
-    
+
     public List<Account> readAllAccounts() {
         return entityManager.createNamedQuery("Account.findAll", Account.class).getResultList();
     }
-    
+
     public List<Account> findEvent(String username, String email, String password) {
         return entityManager.createNamedQuery("Account.findEvent", Account.class)
-            .setParameter("username", username)
-            .setParameter("email", email)
-            .setParameter("password", password).getResultList();
+                .setParameter("username", username)
+                .setParameter("email", email)
+                .setParameter("password", password).getResultList();
     }
 
 }
