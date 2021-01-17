@@ -1,4 +1,4 @@
-package de.hspf.authservice;
+package de.hspf.profileservice;
 
 
 import org.eclipse.microprofile.auth.LoginConfig;
@@ -18,5 +18,5 @@ import javax.ws.rs.core.Application;
 @LoginConfig(authMethod = "MP-JWT")
 @DeclareRoles({"protected"})
 
-public class AuthserviceRestApplication extends Application {
+public class ProfileServiceRestApplication extends Application {
 }

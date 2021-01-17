@@ -1,6 +1,7 @@
-package de.hspf.authservice.secure;
+package de.hspf.profileservice;
 
-import de.hspf.authservice.Account;
+import de.hspf.profileservice.ProfileService;
+import de.hspf.profileservice.model.Account;
 import java.io.IOException;
 import org.eclipse.microprofile.jwt.Claim;
 import org.eclipse.microprofile.jwt.ClaimValue;
@@ -19,7 +20,7 @@ import org.eclipse.microprofile.jwt.JsonWebToken;
  */
 @Path("/user")
 @RequestScoped
-public class ProtectedController {
+public class ProfileController {
 
     @Inject
     ProfileService profileService;

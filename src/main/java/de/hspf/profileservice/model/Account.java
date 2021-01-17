@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package de.hspf.authservice;
+package de.hspf.profileservice.model;
 
 import java.util.List;
 import java.util.Set;
@@ -128,6 +128,4 @@ public class Account {
         this.description = description;
     }
     
-    
-
 }

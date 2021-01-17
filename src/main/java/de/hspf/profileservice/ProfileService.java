@@ -3,10 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package de.hspf.authservice.secure;
+package de.hspf.profileservice;
 
-import de.hspf.authservice.Account;
-import de.hspf.authservice.ExpertLevel;
+import de.hspf.profileservice.ProfileResporitory;
+import de.hspf.profileservice.model.Account;
+import de.hspf.profileservice.model.ExpertLevel;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

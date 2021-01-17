@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package de.hspf.authservice.secure;
+package de.hspf.profileservice;
 
-import de.hspf.authservice.Account;
+import de.hspf.profileservice.model.Account;
 import java.io.Serializable;
 import java.util.List;
 import java.util.logging.Level;
@@ -33,7 +33,6 @@ public class ProfileResporitory implements Serializable {
     }
 
     public Account updateAccount(Account accountUpdated) {
-        logger.info("... " + accountUpdated.getDescription());
         Account account = this.getAccountByEmail(accountUpdated);
         account.setJob(accountUpdated.getJob());
         account.setAge(accountUpdated.getAge());
@@ -41,7 +40,6 @@ public class ProfileResporitory implements Serializable {
         account.setTopics(accountUpdated.getTopics());
         account.setDescription(accountUpdated.getDescription());
         entityManager.merge(account);
-        logger.info("asdas" + account.getDescription());
         return account;
     }
 
