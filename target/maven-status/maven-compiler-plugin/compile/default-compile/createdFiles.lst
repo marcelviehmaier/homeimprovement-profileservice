@@ -1,6 +1,6 @@
 de\hspf\profileservice\ProfileResporitory.class
 de\hspf\profileservice\model\ExpertLevel.class
-de\hspf\profileservice\ProtectedController.class
+de\hspf\profileservice\ProfileController.class
 de\hspf\profileservice\ProfileServiceRestApplication.class
 de\hspf\profileservice\model\Account.class
 de\hspf\profileservice\ProfileService.class
